@@ -1,4 +1,5 @@
 import random
+import matplotlib.pyplot as plt
 
 
 def exercise_1():
@@ -33,4 +34,33 @@ def exercise_2():
     phrase += term3[random.randint(0, len(term3))]
 
     print(phrase)
+
+
+def exercise_3():
+    x = list(range(1, 10))
+
+    y = comprehension(x)
+
+    plt.plot(x, y, label='y = 2x+3')
+
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Plot (y = 2x + 3)')
+    plt.legend()
+
+    plt.show()
+
+
+def generate(x):
+    y = []
+    for value in x:
+        y.append(2 * value + 3)
+    return y
+
+
+def comprehension(x):
+    y = [2 * value + 3 for value in x]
+    return y
+
+exercise_3()
 
